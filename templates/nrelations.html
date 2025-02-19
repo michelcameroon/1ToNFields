@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add nTb Relation</title>
+</head>
+<body>
+    <h1>Add nTb Relation for 1Tb ID: {{ one_tb_id }}</h1>
+
+    <form method="POST">
+      <table border="1">
+        {% for fieldNamesNoId in fieldNamesNoIds %}
+          <tr>
+          <td>
+           <div class="mb-3">
+
+
+                <label for="{{ fieldNamesNoId }}" class="form-label">{{ fieldNamesNoId.capitalize() }}</label>
+                </td>
+                <td>
+                 <input type="text" class="form-control" id="{{ fieldNamesNoId }}" name="{{ fieldNamesNoId }}" >
+                </td>
+           </div>
+          </tr>
+
+        {% endfor %}
+
+        <!-- 
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" required>
+        -->
+
+        <button type="submit">Add</button>
+      </table>
+    </form>
+</body>
+</html>
